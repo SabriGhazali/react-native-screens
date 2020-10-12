@@ -186,7 +186,11 @@ public class ScreenStack extends ScreenContainer<ScreenStackFragment> {
             break;
           case SLIDE:
             customAnimation = true;
-            getOrCreateTransaction().setCustomAnimations(R.anim.rns_open_slide_in, R.anim.rns_open_slide_out);
+            if(newTop.getScreen().getStackPresentation() == Screen.StackPresentation.TRANSPARENT_MODAL) {
+              getOrCreateTransaction().setCustomAnimations(R.anim.rns_open_slide_modal_in, R.anim.rns_open_slide_modal_out);
+            } else {
+              getOrCreateTransaction().setCustomAnimations(R.anim.rns_open_slide_in, R.anim.rns_open_slide_out);
+            }
             break;
         }
 
@@ -207,7 +211,11 @@ public class ScreenStack extends ScreenContainer<ScreenStackFragment> {
           break;
         case SLIDE:
           customAnimation = true;
-          getOrCreateTransaction().setCustomAnimations(R.anim.rns_close_slide_in, R.anim.rns_close_slide_out);
+          if(mTopScreen.getScreen().getStackPresentation() == Screen.StackPresentation.TRANSPARENT_MODAL) {
+            getOrCreateTransaction().setCustomAnimations(R.anim.rns_close_slide_modal_in, R.anim.rns_close_slide_modal_out);
+          } else {
+            getOrCreateTransaction().setCustomAnimations(R.anim.rns_close_slide_in, R.anim.rns_close_slide_out);
+          }
           break;
       }
 
