@@ -420,7 +420,7 @@ RCT_ENUM_CONVERTER(RNSScreenStackAnimation, (@{
                                                   @"none": @(RNSScreenStackAnimationNone),
                                                   @"fade": @(RNSScreenStackAnimationFade),
                                                   @"flip": @(RNSScreenStackAnimationFlip),
-                                                  @"slide": @(RNSScreenStackAnimationFlip),
+                                                  @"slide": @(RNSScreenStackAnimationSlide),
                                                   }), RNSScreenStackAnimationDefault, integerValue)
 
 RCT_ENUM_CONVERTER(RNSScreenReplaceAnimation, (@{
