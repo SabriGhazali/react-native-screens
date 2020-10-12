@@ -137,6 +137,7 @@
 #endif
     case RNSScreenStackAnimationNone:
     case RNSScreenStackAnimationDefault:
+    case RNSScreenStackAnimationSlide:
       // Default
       break;
   }
@@ -419,6 +420,7 @@ RCT_ENUM_CONVERTER(RNSScreenStackAnimation, (@{
                                                   @"none": @(RNSScreenStackAnimationNone),
                                                   @"fade": @(RNSScreenStackAnimationFade),
                                                   @"flip": @(RNSScreenStackAnimationFlip),
+                                                  @"slide": @(RNSScreenStackAnimationFlip),
                                                   }), RNSScreenStackAnimationDefault, integerValue)
 
 RCT_ENUM_CONVERTER(RNSScreenReplaceAnimation, (@{
